@@ -1,27 +1,26 @@
 import Phaser from "phaser";
+import { sizes } from "./const/configs";
+import { GameScene } from "./scenes/GameScene";
+import { MenuScene } from "./scenes/MenuScene";
+import { BootScene } from "./scenes/BootScene";
+import { ScoresScene } from "./scenes/ScoresScene";
+
+//auto imported by Phaser
+declare let gameCanvas: HTMLCanvasElement;
 
 const config = {
-  type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  type: Phaser.WEBGL,
+  ...sizes,
+  canvas: gameCanvas,
+  pixelArt: true,
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 200 },
+      // debug: true,
     },
   },
-  scene: {
-    preload: preload,
-    create: create,
-  },
+  scene: [BootScene, MenuScene, GameScene, ScoresScene],
 };
 
+//start the game
 new Phaser.Game(config);
-
-function preload() {
-  this.load.image("sky", "assets/sky.png");
-}
-
-function create() {
-  this.add.image(400, 300, "sky");
-}
