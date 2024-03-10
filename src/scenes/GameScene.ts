@@ -44,12 +44,11 @@ export class GameScene extends Phaser.Scene {
   }
 
   initBottomBoundry() {
-    this.bottomBoundry = this.physics.add.sprite(
-      sizes.width / 2,
-      sizes.height,
-      ""
-    );
-    this.bottomBoundry.setSize(sizes.width, 1);
+    this.bottomBoundry = this.physics.add
+      .sprite(sizes.width / 2, sizes.height, "")
+      .setSize(sizes.width, 1);
+
+    this.bottomBoundry.visible = false;
   }
 
   initKeys() {
