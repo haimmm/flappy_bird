@@ -131,7 +131,6 @@ export class GameScene extends Phaser.Scene {
   }
 
   gameOver() {
-    console.log("game over!");
     this.physics.pause();
     this.score.stopScoreEvent();
     this.stopPipesDestroyEvent();
