@@ -7,13 +7,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "host": "vite --host --port 3000"
+    "host": "pm2 serve dist 3000"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
   },
   "dependencies": {
-    "phaser": "^3.70.0"
+    "phaser": "^3.70.0",
+    "pm2": "^5.3.1"
   }
 }
