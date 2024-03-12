@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "host": "pm2 serve dist 3000"
+    "host": "pm2 serve dist 3000 --name flappy --no-daemon"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
